@@ -26,6 +26,21 @@ PKGS=(
   'flameshot'
   'git'
   'gparted'
+  
+  # gparted optional dependencies
+  'btrfs-progs'   # for btrfs partitions
+  'dosfstools'    # for FAT16 and FAT32 partitions
+  'exfatprogs'    # for exFAT partitions
+  'f2fs-tools'    # Flash-Friendly File System
+  'gpart'         # for recovering corrupt partiton tables
+  'jfsutils'      # for jfs partitions
+  'mtools'        # utilities to access MS-DOS disks
+  'nilfs-utils'   # for nilfs2 support
+  'ntfs-3g'       # for ntfs partitions
+  'reiserfsprogs' # for reiser partitions
+  'udftools'      # for UDF file system support
+  'xfsprogs'      # for xfs partitions
+  
   'gtop'
   'htop'
   'kate'
@@ -39,6 +54,7 @@ PKGS=(
   'obsidian'
   'okular'
   'pavucontrol'
+  'polkit'
   'pulseaudio'
   'python-pip'
   'qbittorrent'
