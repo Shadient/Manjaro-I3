@@ -6,6 +6,7 @@ echo
 echo "INSTALLING DEPENDENCIES"
 echo
 
+cd ~
 sudo pacman -Sy
 
 PKGSAUR=(
@@ -15,7 +16,7 @@ PKGSAUR=(
   'ripgrep'
 )
 
-for PKG in "${PKGSAUR[@]}"; do
+for PKGAUR in "${PKGSAUR[@]}"; do
   echo "INSTALLING: ${PKGAUR}"
   sudo pacman -S "$PKGAUR" --needed
 done
@@ -96,7 +97,7 @@ PKGS=(
 
 for PKG in "${PKGS[@]}"; do
   echo "INSTALLING: ${PKG}"
-  sudo pacman -S "$PKG" --noconfirm --needed
+  sudo pacman -S "$PKG" --needed
 done
 
 source ~/.bashrc
