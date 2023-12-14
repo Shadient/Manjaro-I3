@@ -17,7 +17,7 @@ PKGSAUR=(
 
 for PKG in "${PKGSAUR[@]}"; do
   echo "INSTALLING: ${PKGAUR}"
-  sudo pacman -S "$PKGAUR" --noconfirm --needed
+  sudo pacman -S "$PKGAUR" --needed
 done
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
