@@ -20,6 +20,11 @@ for PKG in "${PKGSAUR[@]}"; do
   sudo pacman -S "$PKGAUR" --noconfirm --needed
 done
 
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+source ~/.bashrc
+nvm install --lts
+source ~/.bashrc
+
 #-------------------------------------------------------------------------
 
 echo
@@ -27,6 +32,7 @@ echo "SYSTEM UPDATE"
 echo
 
 sudo pacman -Syu
+source ~/.bashrc
 
 #-------------------------------------------------------------------------
 
@@ -93,6 +99,8 @@ for PKG in "${PKGS[@]}"; do
   sudo pacman -S "$PKG" --noconfirm --needed
 done
 
+source ~/.bashrc
+
 #-------------------------------------------------------------------------
 
 echo
@@ -103,6 +111,7 @@ git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
 cd ~
+source ~/.bashrc
 
 paru -S librewolf-bin
 paru -S vscodium-bin
