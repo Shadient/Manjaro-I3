@@ -1,21 +1,41 @@
 #!/usr/bin/env bash
-#-------------------------------------------------------------------------
-#      _          _    __  __      _   _
-#     /_\  _ _ __| |_ |  \/  |__ _| |_(_)__
-#    / _ \| '_/ _| ' \| |\/| / _` |  _| / _|
-#   /_/ \_\_| \__|_||_|_|  |_\__,_|\__|_\__|
-#  Arch Linux Post Install Setup and Config
+
 #-------------------------------------------------------------------------
 
 echo
-echo "INSTALLING SOFTWARE"
+echo "INSTALLING DEPENDENCIES"
 echo
 
 sudo pacman -Sy
 
+PKGSAUR=(
+  'base-devel'
+  'git'
+  'less'
+  'ripgrep'
+)
+
+for PKG in "${PKGSAUR[@]}"; do
+  echo "INSTALLING: ${PKGAUR}"
+  sudo pacman -S "$PKGAUR" --noconfirm --needed
+done
+
+#-------------------------------------------------------------------------
+
+echo
+echo "SYSTEM UPDATE"
+echo
+
+sudo pacman -Syu
+
+#-------------------------------------------------------------------------
+
+echo
+echo "INSTALLING PACKAGES"
+echo
+
 PKGS=(
   'alacritty'
-  'base-devel'
   'blender'
   'brightnessctl'
   'btop'
@@ -27,7 +47,7 @@ PKGS=(
   'git'
   'gparted'
   
-  # gparted optional dependencies
+  # -- gparted optional dependencies --
   'btrfs-progs'   # for btrfs partitions
   'dosfstools'    # for FAT16 and FAT32 partitions
   'exfatprogs'    # for exFAT partitions
@@ -44,8 +64,7 @@ PKGS=(
   'gtop'
   'htop'
   'kate'
-  'less'
-  'linux419-virtualbox-host-modules'
+  # 'linux419-virtualbox-host-modules'
   'man-db'
   'meson'
   'neofetch'
@@ -59,12 +78,11 @@ PKGS=(
   'python-pip'
   'qbittorrent'
   'redshift'
-  'ripgrep'
   'rust'
   'tectonic'
   'telegram-desktop'
   'thunar'
-  'virtualbox'
+  # 'virtualbox'
   'vlc'
   'wget'
   'zathura'
@@ -74,6 +92,8 @@ for PKG in "${PKGS[@]}"; do
   echo "INSTALLING: ${PKG}"
   sudo pacman -S "$PKG" --noconfirm --needed
 done
+
+#-------------------------------------------------------------------------
 
 echo
 echo 'INSTALLING AUR PACKAGES'
