@@ -126,9 +126,10 @@ makepkg -si
 cd ~
 source ~/.bashrc
 
+paru -S etcher-bin
 paru -S librewolf-bin
 paru -S vscodium-bin
-paru -S etcher-bin
+paru -S waterfox-bin
 
 #-------------------------------------------------------------------------
 # ADDITIONAL
@@ -142,3 +143,5 @@ cargo build --release --no-default-features --features x11
 echo
 echo "Done!"
 echo
+
+
