@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 #-------------------------------------------------------------------------
+# DEPENDENCIES
+#-------------------------------------------------------------------------
 
 echo
 echo "INSTALLING DEPENDENCIES"
@@ -11,6 +13,7 @@ sudo pacman -Sy
 
 PKGSAUR=(
   'base-devel'
+  'curl'
   'git'
   'less'
   'ripgrep'
@@ -27,6 +30,8 @@ nvm install --lts
 source ~/.bashrc
 
 #-------------------------------------------------------------------------
+# SYSTEM UPDATE
+#-------------------------------------------------------------------------
 
 echo
 echo "SYSTEM UPDATE"
@@ -35,6 +40,8 @@ echo
 sudo pacman -Syu
 source ~/.bashrc
 
+#-------------------------------------------------------------------------
+# INSTALLING PACKAGES
 #-------------------------------------------------------------------------
 
 echo
@@ -46,10 +53,8 @@ PKGS=(
   'blender'
   'brightnessctl'
   'btop'
-  'cmatrix'
-  'curl'
+  'cmatrix'  
   'discord'
-  'firefox'
   'flameshot'
   'git'
   'gparted'
@@ -93,6 +98,11 @@ PKGS=(
   'vlc'
   'wget'
   'zathura'
+
+  # Web Browsers
+  'firefox'
+  'opera'
+  'vivaldi'
 )
 
 for PKG in "${PKGS[@]}"; do
@@ -102,6 +112,8 @@ done
 
 source ~/.bashrc
 
+#-------------------------------------------------------------------------
+# AUR PACKAGES
 #-------------------------------------------------------------------------
 
 echo
@@ -117,6 +129,15 @@ source ~/.bashrc
 paru -S librewolf-bin
 paru -S vscodium-bin
 paru -S etcher-bin
+
+#-------------------------------------------------------------------------
+# ADDITIONAL
+#-------------------------------------------------------------------------
+
+# eww
+git clone https://github.com/elkowar/eww
+cd eww
+cargo build --release --no-default-features --features x11
 
 echo
 echo "Done!"
