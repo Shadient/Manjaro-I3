@@ -135,11 +135,6 @@ paru -S waterfox-bin
 # ADDITIONAL
 #-------------------------------------------------------------------------
 
-# eww
-git clone https://github.com/elkowar/eww
-cd eww
-cargo build --release --no-default-features --features x11
-
 echo
 echo "Done!"
 echo
