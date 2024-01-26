@@ -33,12 +33,12 @@ source ~/.bashrc
 # SYSTEM UPDATE
 #-------------------------------------------------------------------------
 
-echo
-echo "SYSTEM UPDATE"
-echo
+# echo
+# echo "SYSTEM UPDATE"
+# echo
 
-sudo pacman -Syu
-source ~/.bashrc
+# sudo pacman -Syu
+# source ~/.bashrc
 
 #-------------------------------------------------------------------------
 # INSTALLING PACKAGES
@@ -59,7 +59,8 @@ PKGS=(
   'git'
   'gparted'
   
-  # -- gparted optional dependencies --
+  # -- GPARTED DEPENDENCIES --
+  
   'btrfs-progs'   # for btrfs partitions
   'dosfstools'    # for FAT16 and FAT32 partitions
   'exfatprogs'    # for exFAT partitions
@@ -99,10 +100,11 @@ PKGS=(
   'wget'
   'zathura'
 
-  # Web Browsers
+  # -- WEB BROWSERS --
+  
   'firefox'
   'opera'
-  'vivaldi'
+  # 'vivaldi'
 )
 
 for PKG in "${PKGS[@]}"; do
