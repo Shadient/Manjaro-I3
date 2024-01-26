@@ -49,18 +49,18 @@ echo "INSTALLING PACKAGES"
 echo
 
 PKGS=(
-  'alacritty'
-  'blender'
-  'brightnessctl'
-  'btop'
-  'cmatrix'  
-  'discord'
-  'flameshot'
-  'git'
+
+  # -- AUDIO --
+  
+  'alsa-utils'
+  'alsa-plugins'
+  'pulseaudio'
+  'pulseaudio-alsa'
+  'pavucontrol'
+  
+  # -- GPARTED & DEPENDENCIES --
+
   'gparted'
-  
-  # -- GPARTED DEPENDENCIES --
-  
   'btrfs-progs'   # for btrfs partitions
   'dosfstools'    # for FAT16 and FAT32 partitions
   'exfatprogs'    # for exFAT partitions
@@ -73,7 +73,17 @@ PKGS=(
   'reiserfsprogs' # for reiser partitions
   'udftools'      # for UDF file system support
   'xfsprogs'      # for xfs partitions
-  
+
+  # -- MISC --
+
+  'alacritty'
+  'blender'
+  'brightnessctl'
+  'btop'
+  'cmatrix'  
+  'discord'
+  'flameshot'
+  'git'
   'gtop'
   'htop'
   'kate'
@@ -85,9 +95,7 @@ PKGS=(
   'networkmanager'
   'obsidian'
   'okular'
-  'pavucontrol'
   'polkit'
-  'pulseaudio'
   'python-pip'
   'qbittorrent'
   'redshift'
