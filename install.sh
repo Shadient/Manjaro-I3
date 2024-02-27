@@ -77,6 +77,7 @@ PKGS=(
   # -- MISC --
 
   'alacritty'
+  'bitwarden'
   'blender'
   'brightnessctl'
   'btop'
